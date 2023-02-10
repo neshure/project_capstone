@@ -174,9 +174,7 @@ body{
 /* About Page */
 
 #aboutPageNav{
-  display: flex;
-  align-items: center;
-  padding: 8px 1px;
+  margin: 5px auto;
   margin-bottom: 0px;
   position: relative;
 }
@@ -184,13 +182,12 @@ body{
 #about-page{
   display: flex;
   align-items: center;
-  margin-bottom: 0px;
   position: relative;
 }
 
 #about-page li{
   list-style: none;
-  margin: 0 2px;
+  margin: 0 5px;
   padding: 10px 0px;
   font-family: 'Cuprum', sans-serif;
 }
@@ -201,7 +198,7 @@ body{
   text-decoration: none;
   font-family: 'Cuprum', sans-serif;
   color: black;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #about-page li a:hover,
@@ -214,18 +211,16 @@ body{
 }
 
 .about-image-text{
-  display: grid;
+  display: flex;
+  justify-content: left;
   align-items: center;
-  grid-template-columns: 1fr 2fr 1fr;
-  column-gap: 5px;
-  padding: 10px auto;
 }
 
 .about-image-text img{
-  width: 200%;
-  height: 200%;
-  object-fit: cover;
-  padding: 10px 10px;
+  width: 700px;
+  margin: 2px 2px;
+  padding: 2px 2px;
+  position: relative;
 }
 
 .about-image-text p{
@@ -252,8 +247,9 @@ body{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px auto;
-  margin-bottom: 0px;
+  margin: 50px auto;
+  padding: 100px 100px;
+  width: 100%;
   position: relative;
   font-size: 10px;
   background-color: #000000;
@@ -873,6 +869,34 @@ body{
   margin-bottom: 20px;
 }
 
+.product-detail-image img{
+  width: 40%;
+  height: 40%;
+  margin-left: 500px;
+  padding-left: 150px;
+}
 
 
+/* Styling the FEATURED BRAND section */
+
+.featured-brand h2{
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+.shop-by-brands{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.shop-by-brands img{
+  width: 50%;
+  margin: 0 10px;
+}
 

@@ -7,9 +7,11 @@ Product Detail
 {% endblock %} 
 
 {% block content %}
-<div class="container">
+<div class="product-detail-image">
+  <img  src="{{ product.image }}" alt="" />
+</div>
+<div class="container-fluid">
   <div class="productDisplay">
-    <img src="{{ product.image }}" alt="" />
       <h3>{{ product.title }}</h3>
       <p>Price: {{ product.price }}</p>
       <p>Rating: {{ product.rating }}</p>
@@ -17,6 +19,6 @@ Product Detail
           {% csrf_token %}
           <button type="submit" class="btn btn-dark">Add to Cart</button>
       </form>
-  </div>
+  </div><br>
     
 {% endblock %}
