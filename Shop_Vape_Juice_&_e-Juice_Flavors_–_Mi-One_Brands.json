@@ -1,0 +1,290 @@
+[
+    {
+        "title": "Lush Ice VaporLax Salt",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/lush-ice-50mg-salt_600x.png?v=1623099396",
+        "alt": "A 30ml vape juice with nicotine in 25mg & 50mg, experience Lush Ice by VaporLax Salts"
+    },
+    {
+        "title": "Rainbow Mix VaporLax Salt",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/rainbow-mix-50mg-salt_600x.png?v=1623099550",
+        "alt": "A 30ml vape juice with nicotine in 25mg & 50mg, experience Rainbow Mix by VaporLax Salts"
+    },
+    {
+        "title": "Tropic Freeze Air Factory Salt",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Tropic_Freeze_36_600x.png?v=1611182438",
+        "alt": "A 30ml vape juice with nicotine salts in 20mg & 40mg, Tropic Freeze by Air Factory"
+    },
+    {
+        "title": "Iced Kiwi Melon by Cloud Nurdz Salts",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Iced_Kiwi_Melon_600x.png?v=1636481851",
+        "alt": "Iced Kiwi Melon Nicotine Salts by Cloud Nurdz"
+    },
+    {
+        "title": "Iced Strawberry Lemon by Cloud Nurdz Salts",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Iced_Strawberry_Lemon_600x.png?v=1636481909",
+        "alt": "Iced Strawberry Lemon Salts by Cloud Nurdz"
+    },
+    {
+        "title": "Blue Razz VaporLax Salt",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/blue-razz-50mg-salt_600x.png?v=1623098465",
+        "alt": "A 30ml vape juice with nicotine in 25mg & 50mg, experience Blue Razz by VaporLax Salts"
+    },
+    {
+        "title": "Strawberry Banana VaporLax Salt",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/strawberry-banana-50mg-salt_600x.png?v=1623099627",
+        "alt": "Strawberry Banana by VaporLax Salts is a fruity flavored vape juice, blended with nicotine salts"
+    },
+    {
+        "title": "I Love Salts Grappleberry",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Grappleberry_25mg_4d3974df-6bc9-427e-9d93-905a30e957ce_600x.jpg?v=1592581875",
+        "alt": "Grape, Apple, and Mixed Berry flavored nicotine salts in 25mg, an I Love Salts Eliquid"
+    },
+    {
+        "title": "Peach Blue Raspberry by Cloud Nurdz 100mL",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Peach_Blue_Raspberry_600x.png?v=1636152018",
+        "alt": "Peach Blue Raspberry Cloud Nurdz E-Juice"
+    },
+    {
+        "title": "Iced Grape Apple by Cloud Nurdz 100mL",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Grape_Apple_Iced_600x.png?v=1636151225",
+        "alt": "Iced Grape Apple Cloud Nurdz E-Juice"
+    },
+    {
+        "title": "Reds Apple Strawberry e-Juice",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/reds-apple_strawberry_600x600_1e7f2d04-cdd8-4563-a94f-2a98629629ba_600x.png?v=1640645716",
+        "alt": "Reds Apple Strawberry e-Juice"
+    },
+    {
+        "title": "Blue Razz Jam Pod Juice",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/PJ-TFN-BRJAM-30ml_600x.png?v=1649697815",
+        "alt": "Blue Razz Jam Pod Juice Nic Salt"
+    },
+    {
+        "title": "Churros Pod Juice",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/PJ-TFN-CHURROS-30ml_600x.png?v=1649697918",
+        "alt": "Churro Pod Juice Nic Salt"
+    },
+    {
+        "title": "I Love Salts Sweet Strawberry",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Sweet_Strawberry_25_600x.png?v=1603386079",
+        "alt": "Strawberry sweets flavored nicotine salts in 25mg, Sweet Strawberry is an I Love Salts Eliquid"
+    },
+    {
+        "title": "I Love Salts Juicy Apples",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Juicy_Apples_25mg_d64af61c-05a0-4742-ac87-83f5a5d873f6_600x.jpg?v=1592582095",
+        "alt": "Sweet red apple flavored nicotine salts in 25mg, Juicy Apples is an I Love Salts Eliquid"
+    },
+    {
+        "title": "I Love Salts Spearmint",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Spearmint_25_600x.png?v=1603385866",
+        "alt": "Sweet and savory mint flavored nicotine salts in 25mg, Spearmint is an I Love Salts Eliquid"
+    },
+    {
+        "title": "I Love Salts Sweet Tobacco",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Sweet_Tobacco_25mg_299e46c6-1cb7-4e0e-90a2-ce1bd8c4c685_600x.jpg?v=1592582516",
+        "alt": "Earthy tobacco flavored nicotine salts in 25mg, Sweet Tobacco is an I Love Salts Eliquid"
+    },
+    {
+        "title": "I Love Salts Blue Strawberry",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Blue_Strawberry_25_600x.png?v=1603385662",
+        "alt": "Pineapple, Coconut, and Strawberry flavored nicotine salts in 25mg, Blue Strawberry is an I Love Salts Eliquid"
+    },
+    {
+        "title": "I Love Salts Pink Lemonade",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Pink_Lemonade_25_600x.png?v=1603385780",
+        "alt": "Pineapple and Watermelon flavored nicotine salts in 25mg, Pink Lemonade is an I Love Salts Eliquid"
+    },
+    {
+        "title": "I Love Salts Blue Raspberry",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Blue_Raspberry_25mg_704fed1c-fbd7-47c6-b63f-ec576fb62055_600x.jpg?v=1592581678",
+        "alt": "Blue Raspberry flavored nicotine salts, an I Love Salts Eliquid"
+    },
+    {
+        "title": "I Love Salts Strawberry Ice",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Strawberry_Ice_25mg_3cf0bd63-6033-4d30-82f5-1d8e91687257_600x.jpg?v=1592582455",
+        "alt": "Menthol strawberry flavored nicotine salts in 25mg, Strawberry Ice is an I Love Salts Eliquid"
+    },
+    {
+        "title": "I Love Salts Strawberry Guava",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Strawberry_Guava_25_600x.png?v=1603386002",
+        "alt": "Guava, Strawberry, and Kiwi flavored nicotine salts in 25mg, Strawberry Guava is an I Love Salts Eliquid"
+    },
+    {
+        "title": "I Love Salts Classic Tobacco",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Classic_Tobacco_25mg_600x.png?v=1592581793",
+        "alt": "Classic Tobacco flavored nicotine salts in 25mg, an I Love Salts Eliquid"
+    },
+    {
+        "title": "Mi-Salt 10mL",
+        "price": "$4.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Currant_MiSalt_20MG_600x.png?v=1591827649",
+        "alt": "Mi-Salt 10mL"
+    },
+    {
+        "title": "I Love Salts Blue Raspberry Ice",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Blue_Raspberry_Ice_25mg_600x.png?v=1592581739",
+        "alt": "Blue Raspberry Ice flavored nicotine salts in 25mg, an I Love Salts Eliquid"
+    },
+    {
+        "title": "Reds Apple Grape Iced Salts",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Apple_Grape_30MG_600x.png?v=1591891163",
+        "alt": "Apple and grape flavored e-liquid in 30mg from the reds collection, made by 7 daze"
+    },
+    {
+        "title": "Reds Apple Mango Iced Salts",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/reds-salts_apple_mango-iced_600x600_82c722b4-c616-480e-9061-0e35a71032c6_600x.png?v=1640816680",
+        "alt": "7Daze Salt Series Apple Mango Iced Vape Juice"
+    },
+    {
+        "title": "Reds Apple Fruit Mix Iced Salts",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/reds-salts_apple_fruit-mix-iced_600x600_bed6db1a-fee1-4bd0-abe9-869968beafbb_600x.png?v=1640811086",
+        "alt": "Reds Apple Fruit Mix Iced 7Daze Salt Series"
+    },
+    {
+        "title": "Reds Apple Grape Salts",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/reds-salts_apple_grape_600x600_121c333a-1eb0-4df5-8eed-59bf34e10326_600x.png?v=1640813284",
+        "alt": "Reds Apple Grape by 7Daze Salts"
+    },
+    {
+        "title": "Reds Apple Guava Iced Salts",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/reds-salts_apple_guava-iced_600x600_eabddc94-65d4-49c5-af04-15576821b26a_600x.png?v=1640814614",
+        "alt": "7Daze Salt Series Apple Guava Iced Vape Juice"
+    },
+    {
+        "title": "Reds Apple Guava Salts",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/reds-salts_apple_guava_600x600_7ad76f2c-f438-4075-bf5d-dcd914ec4d9e_600x.png?v=1640813995",
+        "alt": "Apple Guava 7Daze Salt Series Vape Juice Flavor"
+    },
+    {
+        "title": "Reds Apple Mango Salts",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/reds-salts_apple_mango_600x600_556cc27c-36f4-425d-8969-7c236d253f88_600x.png?v=1640815091",
+        "alt": "Reds Apple Mango by 7Daze Salt Series"
+    },
+    {
+        "title": "Reds Original Apple Salts",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/reds-salts_apple_original_600x600_a18023d6-228d-406f-8469-09e50501ee89_600x.png?v=1640819985",
+        "alt": "Reds Apple Nic Salt Vape Juice by 7Daze"
+    },
+    {
+        "title": "Reds Apple Fruit Mix Salts",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/reds-salts_apple_fruit-mix_600x600_717855da-9485-4d6d-b264-e615cb813aba_600x.png?v=1640812855",
+        "alt": "7Daze Salt Series Apple Fruit Mix"
+    },
+    {
+        "title": "Reds Apple Strawberry Salts",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/reds-salts_apple_strawberry_600x600_c2fa10a5-f287-4121-b050-72d6957c8003_600x.png?v=1640819016",
+        "alt": "Apple Strawberry 7Daze Salt Series Vape Juice Flavor"
+    },
+    {
+        "title": "Pink Burst Pod Juice",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Pink_Burst_70448b5b-9877-49c8-a086-9d8e8b8c0033_600x.png?v=1610473340",
+        "alt": "Shop sweetened strawberry flavored vape juice made by Pod Juice available in multiple nicotine levels"
+    },
+    {
+        "title": "Jewel Mint Sapphire Pod Juice",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Jewel_Mint_Sapphire_8881a536-be4f-43aa-92ec-d8fc22eb966a_600x.png?v=1605024723",
+        "alt": "Favorited by local vape shops, shop jewel mint sapphire by pod juice in nicotine strengths of 5% and 3.5%"
+    },
+    {
+        "title": "Strawberry Banana Freeze Pod Juice",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Strawberry_Banana_Ice_2221103b-2e24-4d44-9470-ce2f2c6d9bc6_600x.png?v=1605024912",
+        "alt": "Strawberry Banana Freeze Pod Juice Flavor"
+    },
+    {
+        "title": "Banana Freeze Pod Juice",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Banana_Ice_c5c590f4-51f7-4ca8-95a9-fbc3d1e61755_600x.png?v=1605024314",
+        "alt": "Banana Freeze Pod Juice formerly Banana Ice"
+    },
+    {
+        "title": "Strawberry Apple Nectarine Pod Juice",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Strawberry_Apple_Nectarine_600x.png?v=1605024869",
+        "alt": "Shop for Strawberry Apple Nectarine flavored vape juice made by Pod Juice available in multiple nicotine levels"
+    },
+    {
+        "title": "Jewel Mint Lush Freeze Pod Juice",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Jewel_Mint_Lush_Ice_fb3a9d82-624f-48eb-b847-9ab11e75aba5_600x.png?v=1605024779",
+        "alt": "Jewel Mint Lush Freeze Pod Juice"
+    },
+    {
+        "title": "Strawberry Kiwi Air Factory Salt",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Strawberry_Kiwi_36_600x.png?v=1611182437",
+        "alt": "A 30ml vape juice with nicotine salts in 20mg & 40mg, Strawberry Kiwi by Air Factory"
+    },
+    {
+        "title": "Mango Ice Air Factory Salt",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Mango_Ice_36_600x.png?v=1611182435",
+        "alt": "A 30ml vape juice with nicotine salts in 20mg & 40mg, Mango Ice by Air Factory"
+    },
+    {
+        "title": "Melon Lush Ice Air Factory Salt",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Melon_Lush_Ice_36_600x.png?v=1611182436",
+        "alt": "A 30ml vape juice with nicotine salts in 20mg & 40mg, Melon Lush Ice by Air Factory"
+    },
+    {
+        "title": "Reds Apple Peach Iced Salts",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/reds-salts_apple_peach-iced_600x600_349aa7a3-6dd6-47cd-ae42-d0a7928bcc15_600x.png?v=1640818034",
+        "alt": "Apple Peach Iced Nic Salt Vape Juice by 7Daze Salt Series"
+    },
+    {
+        "title": "Peach Freeze Pod Juice",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Peach_Ice_600x.png?v=1610473268",
+        "alt": "Peach Freeze Pod Juice Vape Juice"
+    },
+    {
+        "title": "Icy Fruits VaporLax Salt",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/icy-fruits-50mg-salt_600x.png?v=1623099225",
+        "alt": "Icy Fruits by VaporLax Salts is a fruity yet mentholated vape juice, blended with nicotine salts"
+    },
+    {
+        "title": "Tropical Punch VaporLax Salt",
+        "price": "$12.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/tropical-punch-50mg-salt_600x.png?v=1623099775",
+        "alt": "Tropical Punch by VaporLax Salts is a tropical flavored vape juice, blended with nicotine salts"
+    }
+]

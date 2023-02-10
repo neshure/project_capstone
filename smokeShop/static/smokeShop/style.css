@@ -1,0 +1,837 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&family=Clicker+Script&family=Diplomata+SC&family=IBM+Plex+Serif:wght@600&&family=Cuprum:ital,wght@0,600;1,400&family=Poppins:wght@200;300;400;500;600&family=Lora&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+
+
+
+
+.home-header .homepage-header{
+  border: 4px solid black; 
+  padding: 15px 10px;
+  margin: -1px auto;
+}
+
+.homepage-header p{
+  font-weight: 900;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo-section a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: none;
+}
+
+
+.signIn-user-search{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  margin-bottom: 0px;
+  position: relative;
+  background-color: #000000;
+}
+
+#signIn-user{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: none;
+  position: relative;
+}
+
+.signIn-user-search a{
+  list-style: none;
+  margin: 0 0px;
+  padding-left: 0px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  font-family: 'IBM Plex Serif', serif;
+}
+
+.signIn-user-search p{
+  justify-self: center;
+  font-family: 'Domine', serif;
+  color: #f33030;
+ text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.signIn-user-search p:hover{
+  color: #FFFFFF;
+}
+
+#signIn-user li{
+  list-style: none;
+  margin: 0 20px;
+}
+
+#signIn-user a{
+  list-style: none;
+  margin: 0 0px;
+  padding-left: 0px;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  font-family: 'IBM Plex Serif', serif;
+}
+
+#signIn-user a:hover,
+#signIn-user a.active{
+  color: #f33030;
+}
+
+
+#header{
+  display: flex; 
+  align-items: center;
+  justify-content: space-between; 
+  padding: 20px;
+  padding-left: 220px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+
+
+#navbar{
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li{
+  list-style: none;
+  margin: 0 20px;
+  padding: 0px 30px;
+  position: relative;
+}
+
+#navbar li a{
+  list-style: none;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  font-family: 'IBM Plex Serif', serif;
+}
+
+#navbar li a:hover,
+#navbar li a.active{
+  color: #f33030;
+}
+
+
+#navbar li a.active::after{
+  content: '';
+  display: block;
+  width: 90%;
+  height: 2px;
+  background-color: #f33030;
+  margin-top: 5px;
+  bottom: -4px;
+  position: absolute;
+}
+
+#navbar li a:hover::after{
+  content: '';
+  display: block;
+  width: 90%;
+  height: 2px;
+  background-color: #f33030;
+  margin-top: 5px;
+  bottom: -4px;
+  position: absolute;
+}
+
+
+/* About Page */
+
+#aboutPageNav{
+  display: flex;
+  align-items: center;
+  padding: 8px 1px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+#about-page{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+#about-page li{
+  list-style: none;
+  margin: 0 2px;
+  padding: 10px 0px;
+  font-family: 'Cuprum', sans-serif;
+}
+
+
+#about-page li a{
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Cuprum', sans-serif;
+  color: black;
+  font-size: 14px;
+}
+
+#about-page li a:hover,
+#about-page li a.active{
+  color: #f33030;
+}
+
+.aboutAfroSmoke p{
+  font-family: 'IBM Plex Serif', serif;
+}
+
+.about-image-text{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 5px;
+  padding: 10px auto;
+}
+
+.about-image-text img{
+  width: 200%;
+  height: 200%;
+  object-fit: cover;
+  padding: 10px 10px;
+}
+
+.about-image-text p{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px 10px;
+  text-align: justify;
+  line-height: 30px;
+  text-indent: 50px;
+}
+
+.aboutText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+/* footer */
+.homeFooter{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px auto;
+  margin-bottom: 0px;
+  position: relative;
+  font-size: 10px;
+  background-color: #000000;
+  color: white;
+
+}
+
+.homeFooter img{
+  margin-bottom: 30px;
+  width: 5%;
+  height: 5%;
+}
+
+
+.homeFooter .contactAddress{
+  font-size: 14px;
+  color: #222;
+  font-family: 'Lora', serif;
+  color: white;
+}
+
+.homeFooter .contactAddress h4{
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #222;
+  font-family: 'Lora', serif;
+  font-weight: bolder;
+  color: white;
+}
+
+.homeFooter .contactAddress p{
+  font-size: 13px;
+  color: white;
+}
+
+.homeFooter .myAboutFooter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  margin-left: 60px;
+  padding-right: 10px;
+  color: white;
+}
+
+.homeFooter .myAboutFooter h4{
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #222;
+  font-family: 'Lora', serif;
+  font-weight: bolder;
+  color: white;
+}
+
+.homeFooter .myAboutFooter p{
+  font-size: 13px;
+  margin-bottom: 0 0 8px 0;
+  color: #222;
+  font-family: 'Lora', serif;
+  color: white;
+  
+}
+
+.homeFooter .myAboutFooter a{
+  text-decoration: none;
+  color: #222;
+  transition: 0.3s ease-in-out;
+  font-family: 'Lora', serif;
+  font-size: 12px;
+  color: white;
+}
+
+.homeFooter .myAboutFooter a:hover,
+.homeFooter .col a.active{
+  color: #f33030;
+}
+
+.homeFooter .myAccountFooter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  color: white;
+}
+
+.homeFooter .myAccountFooter h4{
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #222;
+  font-family: 'Lora', serif;
+  font-weight: bolder;
+  color: white;
+}
+
+.homeFooter .myAccountFooter a{
+  text-decoration: none;
+  color: #222;
+  transition: 0.3s ease-in-out;
+  font-family: 'Lora', serif;
+  font-size: 12px;
+  color: white;
+}
+
+.homeFooter .follow{
+  font-size: 14px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-left: 60px;
+  color: white;
+}
+
+.homeFooter .follow h4{
+  margin-bottom: 10px;
+  color: #222;
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  color: white;
+}
+
+.homeFooter .follow a{
+  cursor: pointer;
+  display: inline-block;
+  padding-right: 4px;
+  border-radius: 50%;
+  color: white;
+}
+
+.homeFooter .follow a:hover{
+  background-color: #f33030;
+}
+
+.homeFooter .follow a:hover i{
+  color: #fff;
+}
+
+.homeFooter .follow a i{
+  font-size: 16px;
+  color: #222;
+  transition: 0.3s ease-in-out;
+  color: white;
+}
+
+
+.homeFooter .secure-payment{
+  margin-top: 20px 10px;
+  margin: 0 10px;
+  color: white;
+}
+
+.homeFooter .secure-payment img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.homeFooter .secure-payment h4{
+  margin-bottom: 10px;
+  color: #222;
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  color: white;
+}
+
+
+
+.copyright{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #222;
+  font-family: 'Lora', serif;
+  margin-bottom: 0;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.footerHr{
+  background-color: #000000;
+}
+
+
+/* cart items */
+.shopping-cart h3{
+  font-size: 20px;
+  font-weight: 200;
+  font-family: 'IBM Plex Serif', serif;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.cart-page{ 
+  margin: 80px auto;
+  padding: 20px;
+  width: 80%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  
+}
+
+.cart-page table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-info{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.dropdown .dropdown-menu a{
+  font-size: 5px;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-menu a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/* styling search product page */
+
+
+.product-search{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  margin: 40px 40px;
+}
+
+.searchInput{
+  margin: 0px;
+  position: relative;
+  border-radius: 40px;
+  width: 200px;
+  height: 30px;
+  text-align: inherit;
+  color: rgb(79, 77, 77);
+}
+
+.searchInput::placeholder{
+  text-align: inherit;
+  color: rgb(79, 77, 77);
+}
+
+.product-search h6{
+  font-family: 'poppins', sans-serif;
+  color: rgb(132, 126, 126);
+  margin-top: 10px;
+}
+
+.productType select{
+  margin: 0;
+  position: relative;
+  border-radius: 40px;
+  width: 200px;
+  height: 30px;
+  text-align: inherit;
+  color: rgb(79, 77, 77);
+}
+
+.productByBrands select{
+  margin: 0;
+  position: relative;
+  border-radius: 40px;
+  width: 200px;
+  height: 30px;
+  text-align: inherit;
+  color: rgb(79, 77, 77);
+}
+
+.productPrice select{
+  margin: 0;
+  position: relative;
+  border-radius: 40px;
+  width: 200px;
+  height: 30px;
+  text-align: inherit;
+  color: rgb(79, 77, 77);
+}
+
+/* styling the displayed images */
+
+
+
+.product-image-display img{
+  width: 80%;
+  align-items: center;
+  margin: 0 20px;
+  margin-bottom: 5px;
+}
+
+.product-display{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 30px 20px;
+  margin-bottom: 50px;
+  row-gap: 6ch;
+}
+
+
+.product-info a{
+  text-decoration: none;
+  color: #222;
+  transition: 0.3s ease-in-out;
+  font-family: 'Lora', serif;
+  font-size: 13px;
+  text-align: center;
+}
+
+.product-info a:hover{
+  color: #7a4385;
+}
+
+.product-info h3{
+  font-family: 'poppins', sans-serif;
+  font-size: 13px;
+}
+
+
+/* Styling the paginator  */
+
+.productPaginator{
+  display: flex;
+  justify-content: center;
+  margin: 10px 10px;
+  padding: 20px 10px;
+}
+
+.productPaginator a{
+  text-decoration: none;
+  color: #222;
+  transition: 0.3s ease-in-out;
+  font-family: 'Lora', serif;
+  font-size: 13px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+/* style registration page */
+
+.userRegister{
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+
+/* styling sign up fom */
+
+.signUpForm{
+  margin: 0 20px;
+  padding: 20px 20px;
+}
+
+.signUpForm h3{
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signUpForm input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.signUpForm button{
+  width: 20%;
+  background-color: #961062;
+  color: #fff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signUpForm button:hover{
+  background-color: #7a4385;
+}
+
+.signUpForm a{
+  text-decoration: none;
+  color: #222;
+  transition: 0.3s ease-in-out;
+  font-family: 'Lora', serif;
+  font-size: 13px;
+  text-align: center;
+}
+
+.signUpForm a:hover{
+  color: #7a4385;
+}
+
+.signUpForm hr{
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* styling login form */
+.animate{
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.animate h3{
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.animate input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.animate button{
+  width: 5%;
+  background-color: #961062;
+  color: #fff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.animate button:hover{
+  background-color: #7a4385;
+}
+
+.animate a{
+  text-decoration: none;
+  color: #222;
+  transition: 0.3s ease-in-out;
+  font-family: 'Lora', serif;
+  font-size: 13px;
+  text-align: center;
+}
+
+.animate a:hover{
+  color: #7a4385;
+}
+
+.animate hr{
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+} 
+
+
+/* styling login page */
+.loginPageSection{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 8px 10px;
+  margin-bottom: 0px;
+  position: relative;
+  background-color: #000000;
+}
+
+/* style the sign in or sign up links */
+.loginPage ul{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.loginPageSection li a{
+  list-style: none;
+  margin: 0 5px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.loginPage ul li{
+  list-style: none;
+  margin: 0 5px;
+}
+
+.loginPage ul li p{
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Lora', serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+.loginPage a{
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  font-family: 'Lora', serif;
+  font-size: 13px;
+  text-align: center;
+}
+
+.loginForm-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.ml-2{
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+/* styling the signup form */
+.signupForm{
+  margin: 0 20px;
+  padding: 20px 20px;
+}
+
+.signupForm legend{
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signupForm fieldset{
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+.signupForm .form-group{
+  margin-bottom: 20px;
+}
+

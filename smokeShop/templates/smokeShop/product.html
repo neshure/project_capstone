@@ -1,0 +1,92 @@
+{% extends 'smokeShop/base.html' %} 
+{% load static %}
+{% load crispy_forms_tags%} 
+
+
+{% block title %} 
+Products 
+{% endblock %} 
+
+{% block content %}
+  <!-- display all product types by brands & price -->
+  <div class="product-search">
+    <div class="">
+      <input id="mysearchInput" class="searchInput" type="text" name="search" placeholder="Search"/>
+      <div class="productType">
+        <h6>PRODUCT TYPES</h6>
+        <select name="product-type" id="">
+          <option value="">Select a product</option>
+          <option value="DV">Disposal Vapes</option>
+          <option value="VJ">Vape Juice</option>
+          <option value="VK">Vape Kits</option>
+          <option value="pods">Pods</option>
+          <option value="CI">Clearance Items</option>
+        </select>
+      </div>
+      <div class="productByBrands">
+        <h6>BRANDS</h6>
+        <select name="Brands" id="">
+          <option value="">Select a brand</option>
+          <option value="EF">Elf Bar</option>
+          <option value="CN">Cloud Nurdz</option>
+          <option value="CP">Cool Play</option>
+          <option value="EVDRP">EVODRIP</option>
+          <option value="AirBD">Air Bar Disposable</option>
+          <option value="CCEL">CCELL</option>
+          <option value="EsBar">Esco Bar</option>
+        </select>
+      </div>
+      <div class="productPrice">
+        <h6>PRICE</h6>
+        <select name="Price" id="">
+          <option value="">select a price range</option>
+          <option value="0-10">$0-$10</option>
+          <option value="10-20">$10-$20</option>
+          <option value="20-30">$20-$30</option>
+          <option value="30-40">$30-$40</option>
+          <option value="40-50">$40-$50</option>
+          <option value="50-60">$50-$60</option>
+          <option value="60-70">$60-$70</option>
+          <option value="70-80">$70-$80</option>
+          <option value="80-90">$80-$90</option>
+          <option value="90-100">$90-$100</option>
+        </select>
+      </div>
+    </div>
+    <!-- display all products -->
+    <div class="product-display">
+      {% for product in products %}
+      <article class="product-search-result">
+        <div class="product-image-display">
+          <a href=""><img src="{{ product.image }}" alt="{{ product.alt }}" /></a>
+        </div>
+        <div class="product-info">
+          <a href="#">
+            <h3>{{ product.title }}</h3>
+            <p>${{ product.price }}</p>
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="productPaginator">
+    {% if is_paginated %}
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-light mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-light mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-outline-light mb-4" href="?page{{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-light mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+      {% if page_obj.has_next %}
+      <a class="btn btn-outline-light mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+      <a class="btn btn-outline-light mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    {% endif %}
+    {% endif %}
+  </div>
+{% endblock %}

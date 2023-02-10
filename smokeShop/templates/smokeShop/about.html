@@ -1,0 +1,34 @@
+{% extends 'smokeShop/base.html' %}
+{% load static %}
+
+{% block title %}
+  About us
+{% endblock %}
+
+
+{% block content %}
+  <nav id="aboutPageNav">
+    <ul id="about-page">
+      <li class="active" ><a href="{% url 'home' %}">Home ></a></li>
+      <li>About</li>
+    </ul>
+  </nav>
+  <div class="container about-image-text">
+    <div class="aboutImage">
+      <img src="{% static 'smokeShop/media/about.png' %}" alt="about us" class="aboutUsImg">
+    </div>
+
+    <div class="aboutText">
+      <p class="aboutUsP">
+        Welcome to our smoke shop. Afro Smoke is a proud veteran-owned, black-owned business serving the smoking community with quality products and excellent customer service. <br> <br>
+        Our mission is to provide a one-stop-shop for all your smoking needs, whether you're a seasoned smoker or just starting out.
+        We understand the importance of finding the right equipment for your smoking experience, which is why we offer a wide range of products, including water pipes, hand pipes, vaporizers, disposal cartridges, smoke accessories, and hookahs.
+        Our products are carefully selected to ensure they are of the highest quality and offer the best value for your money. <br> <br>
+        As a veteran-owned business, we understand the importance of serving our customers with the utmost care and respect. That's why we are committed to providing excellent customer service, whether you're shopping online or visiting our store. Our team is always available to answer any questions you may have and help you find the perfect products for your needs.
+        We are proud to serve the smoking community and look forward to helping you find the right products for your smoking experience. Thank you for considering us for all your smoking needs.
+      </p>
+    </div>
+
+  </div>
+
+{% endblock %}  
