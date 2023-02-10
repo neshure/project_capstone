@@ -58,10 +58,10 @@ Products
       {% for product in products %}
       <article class="product-search-result">
         <div class="product-image-display">
-          <a href=""><img src="{{ product.image }}" alt="{{ product.alt }}" /></a>
+          <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image }}" alt="{{ product.alt }}" /></a>
         </div>
         <div class="product-info">
-          <a href="#">
+          <a href="{% url 'product_detail' product.id %}">
             <h3>{{ product.title }}</h3>
             <p>${{ product.price }}</p>
           </a>

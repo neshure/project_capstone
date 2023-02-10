@@ -1,13 +1,17 @@
 import stripe
 from django.conf import settings
-from django.shortcuts import render, redirect
-from . models import Product
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
+from . models import Product, OrderItem, Order
 from django.views.generic import ListView, DetailView
 from django.contrib import messages
 from django.views import View
 from django.http import HttpResponse, JsonResponse
+from userApps.models import Profile
+from . extras import generate_order_id
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
+
 
 
 def home(request):
@@ -16,8 +20,44 @@ def home(request):
 def about(request):
   return render(request, 'smokeShop/about.html')
 
-def cart(request):
-  return render(request, 'smokeShop/cart.html')
+
+
+@login_required
+def add_to_cart(request, **kwargs):
+  # get the user's profile
+  user_profile = get_object_or_404(Profile, user=request.user)
+  # filter products by id
+  id=int(kwargs.get('pk'))
+  product = Product.objects.get(id=id)
+  # create orderItem of the selected product
+  order_item, status = OrderItem.objects.get_or_create(product=product)
+  # create order associated with the user
+  user_order, status = Order.objects.get_or_create(user=user_profile.user, ordered=False)
+  user_order.order_item.add(order_item)
+  if status:
+      # generate a reference code
+      user_order.ref_code = generate_order_id()
+      user_order.save()
+
+    # show confirmation message and redirect back to the same page
+  messages.info(request, "item added to cart")
+  return redirect(reverse('product'))
+
+
+
+
+
+def remove_from_cart(request, **kwargs):
+  item_to_delete = OrderItem.objects.filter(pk=kwargs.get('item_id', ""))
+  if item_to_delete.exists():
+      item_to_delete[0].delete()
+      messages.info(request, "Item has been deleted")
+  return redirect(reverse('product_detail'))
+
+
+
+
+
 
 def checkout(request):
   return render(request, 'smokeShop/checkout.html')
@@ -45,7 +85,8 @@ class CancelledView(View):
 
 class CheckoutView(View):
   def get(self, *args, **kwargs):
-    product = Product.objects.get(id=self.kwargs['pk'])
+    print(kwargs)
+    product_id = self.kwargs['pk']
     context = super().get_context_data(**kwargs)
     context.update({
       'product': product,

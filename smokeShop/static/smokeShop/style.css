@@ -835,3 +835,44 @@ body{
   margin-bottom: 20px;
 }
 
+/* styling the product detail view */
+
+.productDisplay{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.productDisplay h3{
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.productDisplay .product-detailview-img{
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+}
+
+.productDisplay p{
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.productDisplay form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+
+
+
