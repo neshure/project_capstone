@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.db.models import Sum
 
 
 
@@ -40,17 +41,8 @@ class Order(models.Model):
   def get_cart_items(self):
     return self.order_item.all()
 
-  def get_total(self):
-    total = 0
-    for order_item in self.order_item.all():
-      total += order_item.get_total()
-    return total
-
-  def get_total_quantity(self):
-    total = 0
-    for order_item in self.order_item.all():
-      total += order_item.quantity
-    return total
+  def get_total_price(self):
+    return self.order_item.aggregate(Sum('product__price'))['product__price__sum']
 
   
 

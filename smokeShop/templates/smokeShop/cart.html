@@ -7,38 +7,49 @@
 {% endblock %}
 
 {% block content %}
-  <!-- cart -->
-  <div class="container shopping-cart">
-    <h3>Shopping Cart</h3>
-  </div>
-  <div class="small-container cart-page">
-    <table>
-      <tr>
-        <th>Product</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Subtotal</th>
-      </tr>
-      {% for item in cart %}
-        <tr>
-          <td>
-            <div class="cart-info">
-              <img src="{{ item.product.image.url }}">
-              <div>
-                <p>{{ item.product.name }}</p>
-                <small>Price: ${{ item.product.price }}</small>
-                <br>
-                <a href="{% url 'remove_from_cart' item.product.id %}">Remove</a>
-              </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Shopping Cart</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in order.order_item.all %}
+              <tr>
+                <td>{{ item.product.title }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.product.price }}</td>
+                <td>{{ item.price_total }}</td>
+                <td>
+                  <form action="{% url 'remove_from_cart' item.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                  </form>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="row">
+          <div class="col-md-6">
+            <a href="{% url 'product' %}" class="btn btn-primary">Continue Shopping</a>
+          </div>
+          <div class="col-md-6">
+            <div class="float-right">
+              <h3>Total: {{ total }}</h3>
+              <a href="{% url 'checkout' %}" class="btn btn-success">Checkout</a>
             </div>
-          </td>
-          <td><input type="number" value="{{ item.quantity }}"></td>
-          <td>${{ item.product.price }}</td>
-        </tr>
-      {% endfor %}
-
-    </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <!-- cart -->
 {% endblock %} 

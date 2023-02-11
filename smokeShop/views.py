@@ -30,21 +30,27 @@ def add_to_cart(request, **kwargs):
   id=int(kwargs.get('pk'))
   product = Product.objects.get(id=id)
   # create orderItem of the selected product
-  order_item, status = OrderItem.objects.get_or_create(product=product)
+  order_item, status_ = OrderItem.objects.get_or_create(product=product)
   # create order associated with the user
-  user_order, status = Order.objects.get_or_create(user=user_profile.user, ordered=False)
+  user_order, status_ = Order.objects.get_or_create(user=user_profile.user, ordered=False)
   user_order.order_item.add(order_item)
-  if status:
-      # generate a reference code
-      user_order.ref_code = generate_order_id()
-      user_order.save()
+  # generate a reference code
+  user_order.ref_code = generate_order_id()
+  user_order.save()
 
     # show confirmation message and redirect back to the same page
   messages.info(request, "item added to cart")
   return redirect(reverse('product'))
 
 
-
+@login_required
+def cart(request):
+  order = Order.objects.filter(user=request.user, ordered=False)
+  if order.exists():
+      order = order[0]
+      return render(request, 'smokeShop/cart.html', {'order': order})
+  
+  
 
 
 def remove_from_cart(request, **kwargs):
@@ -83,43 +89,43 @@ class CancelledView(View):
   def get(self, *args, **kwargs):
     return render(self.request, 'smokeShop/cancel.html', {})
 
-class CheckoutView(View):
-  def get(self, *args, **kwargs):
-    print(kwargs)
-    product_id = self.kwargs['pk']
-    context = super().get_context_data(**kwargs)
-    context.update({
-      'product': product,
-    })
-    return render(self.request, 'smokeShop/checkout.html', context)
+# class CheckoutView(View):
+#   def get(self, *args, **kwargs):
+#     print(kwargs)
+#     product_id = self.kwargs['pk']
+#     context = super().get_context_data(**kwargs)
+#     context.update({
+#       'product': product,
+#     })
+#     return render(self.request, 'smokeShop/checkout.html', context)
 
-class CreateCheckoutSessionView(View):
-  def post(self, request, *args, **kwargs):
-    product_id = self.kwargs['pk']
-    product = Product.objects.get(id=product_id)
-    YOUR_DOMAIN = 'http://127.0.0.1:8000'
-    checkout_session = stripe.checkout.Session.create(
-        line_items=[
-            {
+# class CreateCheckoutSessionView(View):
+#   def post(self, request, *args, **kwargs):
+#     product_id = self.kwargs['pk']
+#     product = Product.objects.get(id=product_id)
+#     YOUR_DOMAIN = 'http://127.0.0.1:8000'
+#     checkout_session = stripe.checkout.Session.create(
+#         line_items=[
+#             {
 
-              'price_data': {
-                'currency': 'usd',
-                'unit_amount': int(product.price * 100  ),
-                'product_data': {
-                  'name': product.title,
-                },
-              },
-                'quantity': 1,
-            },
-        ],
-        mode='payment',
-        success_url=YOUR_DOMAIN + '/success/',
-        cancel_url=YOUR_DOMAIN + '/cancel/',
-    )
-    return JsonResponse({'id': checkout_session.id})
+#               'price_data': {
+#                 'currency': 'usd',
+#                 'unit_amount': int(product.price * 100  ),
+#                 'product_data': {
+#                   'name': product.title,
+#                 },
+#               },
+#                 'quantity': 1,
+#             },
+#         ],
+#         mode='payment',
+#         success_url=YOUR_DOMAIN + '/success/',
+#         cancel_url=YOUR_DOMAIN + '/cancel/',
+#     )
+#     return JsonResponse({'id': checkout_session.id})
 
-# if __name__ == '__main__':
-#     app.run(port=4242)
+# # if __name__ == '__main__':
+# #     app.run(port=4242)
 
 
 
