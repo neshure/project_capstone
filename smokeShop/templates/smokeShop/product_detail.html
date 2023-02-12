@@ -13,12 +13,13 @@ Product Detail
 <div class="container-fluid">
   <div class="productDisplay">
       <h3>{{ product.title }}</h3>
-      <p>Price: {{ product.price }}</p>
+      <p >Price: {{ product.price }}</p>
       <p>Rating: {{ product.rating }}</p>
       <form action="{% url 'add_to_cart' product.id %}" method="POST">
           {% csrf_token %}
           <button type="submit" class="btn btn-dark">Add to Cart</button>
       </form>
   </div><br>
+</div
     
 {% endblock %}

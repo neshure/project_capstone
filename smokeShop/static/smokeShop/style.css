@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&family=Clicker+Script&family=Diplomata+SC&family=IBM+Plex+Serif:wght@600&&family=Cuprum:ital,wght@0,600;1,400&family=Poppins:wght@200;300;400;500;600&family=Lora&family=Poppins:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&family=Clicker+Script&family=Diplomata+SC&family=IBM+Plex+Serif:wght@600&&family=Cuprum:ital,wght@0,600;1,400&family=Poppins:wght@200;300;400;500;600&family=Lora&family=Poppins:wght@200;300;400;500;600&display=swap&family=Lobster&display=swap');
 
 *{
   box-sizing: border-box;
@@ -14,6 +14,24 @@ body{
 }
 
 
+.animated-text p{
+  text-align: center;
+  animation: animate 5s linear infinite;
+}
+
+
+
+@keyframes animate{
+  0%{
+    color: #000000;
+  }
+  50%{
+    color: #f33030;
+  }
+  100%{
+    color: #000000;
+  }
+}
 
 
 .home-header .homepage-header{
@@ -833,6 +851,7 @@ body{
 
 /* styling the product detail view */
 
+
 .productDisplay{
   display: block;
   justify-content: center;
@@ -899,4 +918,3 @@ body{
   width: 50%;
   margin: 0 10px;
 }
-

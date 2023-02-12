@@ -31,9 +31,9 @@
     <a href=""><img src="{% static 'smokeShop/media/logo2.png' %}" alt="logo"></a>
   </div>
   <section class="signIn-user-search">
-    <div style="width: 168px; text-decoration:none"></div>
-    <a href="{% url 'account_signup' %}">
-      <p>Become a member today to get the hottest deals!</p>
+    <div style="width: 168px; text-decoration:none; margin-left: 100px;"></div>
+    <a class="animated-text" href="{% url 'account_signup' %}">
+      <p style="font-family: 'Permanent Marker', cursive; font-size: 30px" >Become a member today to get the hottest deals!</p>
     </a>
     <section class="loginPageSection">
       <div class="loginPage">
@@ -43,12 +43,13 @@
           <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
           {% else %}
           <li><a href="{% url 'account_login' %}">Sign In</a></li>
-          <li><p>OR</p></li>
+          <li><p>|</p></li>
           <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
           {% endif %}
         </ul>
       </div>
-      <li><a href="{% url 'product' %}"><i class="fa-solid fa-search"></i></a></li>
+      <li><a href="{% url 'product' %}"><p style="color: white; font-size: 13px;">View all our Products</p></a></li>
+
     </section>
   </section>
 
