@@ -10,6 +10,8 @@ from django.views import View
 from django.http import HttpResponse, JsonResponse
 from userApps.models import Profile
 from . extras import generate_order_id
+from django.db.models import Avg
+from .forms import UserRatingForm
 
 
 
@@ -39,8 +41,8 @@ def add_to_cart(request, **kwargs):
   user_order.save()
 
     # show confirmation message and redirect back to the same page
-  messages.info(request, "item added to cart")
   return redirect(reverse('product'))
+
 
 
 @login_required
@@ -53,12 +55,20 @@ def cart(request):
   
 
 
+# remove product from cart
+
+@login_required
 def remove_from_cart(request, **kwargs):
-  item_to_delete = OrderItem.objects.filter(pk=kwargs.get('item_id', ""))
-  if item_to_delete.exists():
-      item_to_delete[0].delete()
-      messages.info(request, "Item has been deleted")
-  return redirect(reverse('product_detail'))
+  if request.method == 'POST':
+      id = int(kwargs.get('pk'))
+      order_item = OrderItem.objects.get(id=id)
+      order = Order.objects.filter(user=request.user, ordered=False)
+      if order.exists():
+          order = order[0]
+          order.order_item.remove(order_item)
+          return redirect(reverse('cart'))
+      else:
+          return redirect(reverse('cart'))
 
 
 
@@ -81,54 +91,10 @@ class ProductDetailView(DetailView):
   template_name = 'smokeShop/product_detail.html'
   context_object_name = 'product'
 
-class SuccessView(View):
-  def get(self, *args, **kwargs):
-    return render(self.request, 'smokeShop/success.html', {})
-
-class CancelledView(View):
-  def get(self, *args, **kwargs):
-    return render(self.request, 'smokeShop/cancel.html', {})
-
-# class CheckoutView(View):
-#   def get(self, *args, **kwargs):
-#     print(kwargs)
-#     product_id = self.kwargs['pk']
-#     context = super().get_context_data(**kwargs)
-#     context.update({
-#       'product': product,
-#     })
-#     return render(self.request, 'smokeShop/checkout.html', context)
-
-# class CreateCheckoutSessionView(View):
-#   def post(self, request, *args, **kwargs):
-#     product_id = self.kwargs['pk']
-#     product = Product.objects.get(id=product_id)
-#     YOUR_DOMAIN = 'http://127.0.0.1:8000'
-#     checkout_session = stripe.checkout.Session.create(
-#         line_items=[
-#             {
-
-#               'price_data': {
-#                 'currency': 'usd',
-#                 'unit_amount': int(product.price * 100  ),
-#                 'product_data': {
-#                   'name': product.title,
-#                 },
-#               },
-#                 'quantity': 1,
-#             },
-#         ],
-#         mode='payment',
-#         success_url=YOUR_DOMAIN + '/success/',
-#         cancel_url=YOUR_DOMAIN + '/cancel/',
-#     )
-#     return JsonResponse({'id': checkout_session.id})
-
-# # if __name__ == '__main__':
-# #     app.run(port=4242)
 
 
-
+def user_rating(request):
+  return render(request, 'smokeShop/user_rating.html')
 
 
 

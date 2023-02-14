@@ -32,9 +32,14 @@
   </div>
   <section class="signIn-user-search">
     <div style="width: 168px; text-decoration:none; margin-left: 100px;"></div>
-    <a class="animated-text" href="{% url 'account_signup' %}">
-      <p style="font-family: 'Permanent Marker', cursive; font-size: 30px" >Become a member today to get the hottest deals!</p>
-    </a>
+      <!-- display user name if authenticated -->
+      {% if user.is_authenticated %}
+        <p style="font-family: 'IBM Plex Serif', serif; font-size: 20px">Hello {{ user.username }}</p>
+      {% else %}
+      <a class="animated-text" href="{% url 'account_signup' %}">
+        <p style="font-family: 'Permanent Marker', cursive; font-size: 30px" >Become a member today to get the hottest deals!</p>
+      </a>
+      {% endif %}
     <section class="loginPageSection">
       <div class="loginPage">
         <ul>
@@ -62,34 +67,14 @@
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="#">Blog</a></li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">VAPE KITS</a>
-          <ul class="dropdown-menu">
-            <a class="dropdown-item" href="#">Aspire Vape</a>
-            <a class="dropdown-item" href="#">Geek Vape</a>
-            <a class="dropdown-item" href="#">iJoy</a>
-            <a class="dropdown-item" href="#">Innokin</a>
-            <a class="dropdown-item" href="#">Joyetech</a>
-            <a class="dropdown-item" href="#">Lost Vape</a>
-            <a class="dropdown-item" href="#">SMOK</a>
-            <a class="dropdown-item" href="#">Suorin</a>
-            <a class="dropdown-item" href="#">Vaporesso</a>
-            <a class="dropdown-item" href="#">VooPoo</a>
-            <a class="dropdown-item" href="#">Wismec</a>
-            <a class="dropdown-item" href="#">Wotofo</a>
-            <a class="dropdown-item" href="#">Yocan</a>
-          </ul>
-        </li>
+        <li><a href="#">VAPE KITS</a></li>
         <li><a href="#">VAPE PODS</a></li>
         <li><a href="#">VAPE JUICE</a></li>
         <li><a href="#">DISPOSABLES</a></li>
       </ul>
       
     </div>
-    <!-- display user name if authenticated -->
-    {% if user.is_authenticated %}
-    <p style="font-family: 'IBM Plex Serif', serif; font-size: 12px">Welcome {{ user.username }}</p>
-    {% endif %}
+  
   </section>
   
   {% block content %}

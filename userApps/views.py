@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login as user_login, logout as use
 
 
 
+
 def login(request):
     if request.method == 'GET':
         form = UserLoginForm()
@@ -26,7 +27,9 @@ def login(request):
 
 def logout(request):
     user_logout(request)
-    return redirect('login')
+    return redirect('home')
+
+
 
 def signup(request):
     if request.method == 'POST':
@@ -62,3 +65,5 @@ def profile(request):
         'p_form': p_form
     }
     return render(request, 'userApps/profile.html', context)
+
+
