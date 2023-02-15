@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, UserLoginForm
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 from django.contrib.auth import authenticate, login as user_login, logout as user_logout
 
 
@@ -30,18 +31,21 @@ def logout(request):
     return redirect('home')
 
 
-
 def signup(request):
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'{username} account has been created! You are now able to log in')
-            return redirect('login')
+    form = UserRegisterForm(request.POST)
+    if form.is_valid():
+        user = form.save()
+        username = form.cleaned_data.get('username')
+        messages.success(request, f"Account created for {username}!")
+        user_login(request, user)
+        return redirect('home')
     else:
-        form = UserRegisterForm()
+        messages.error(request, "There was an error creating your account.")
     return render(request, 'userApps/signup.html', {'form': form})
+
+
+
+
 
 
 #Create a page for Users profile

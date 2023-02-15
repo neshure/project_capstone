@@ -14,9 +14,9 @@ Product Detail
   <div class="productDisplay">
     <h3>{{ product.title }}</h3>
     <p >Price: {{ product.price }}</p>
-    <p>Qty: <input style="width: 50px" type="number" min="1"></p>
     <form action="{% url 'add_to_cart' product.id %}" method="POST">
-          {% csrf_token %}
+      {% csrf_token %}
+          <p>Qty: <input style="width: 50px" type="number" min="1" name="quantity-form"></p>
           <button type="submit" class="btn btn-dark">Add to Cart</button>
       </form>
   </div>

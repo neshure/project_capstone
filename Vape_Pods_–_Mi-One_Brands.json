@@ -1,4 +1,6 @@
-[
+{
+"category": "Vape Pods",
+"products":[
     {
         "title": "Pro Pods 2pk",
         "price": "$9.99",
@@ -71,4 +73,4 @@
         "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/uwell-caliburn-a3-pod-4pcs_600x.png?v=1674240009",
         "alt": "Caliburn A3 Replacement Vape Pods"
     }
-]
+]}

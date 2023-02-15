@@ -4,7 +4,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from .views import (
     ProductView,
-    ProductDetailView,)
+    ProductDetailView,
+    DisposableVapeView,
+    VapePodsView,
+    VapeJuiceView,
+    VapeKitView,)
 
 
 
@@ -18,6 +22,12 @@ urlpatterns = [
     path('product/', ProductView.as_view(), name='product'),
     path('product/<pk>/', ProductDetailView.as_view(), name='product_detail'),
     path('user_rating/', views.user_rating, name='user_rating'),
+    path('payment_detail/', views.payment_details, name='payment_detail'),
+    path('payment/', views.payment, name='payment'),
+    path('disposable_vape_category/', DisposableVapeView.as_view(), name='disposable_vape_category'),
+    path('vape_pods_category/', VapePodsView.as_view(), name='vape_pods_category'),
+    path('vape_juice_category/', VapeJuiceView.as_view(), name='vape_juice_category'),
+    path('vape_kit_category/', VapeKitView.as_view(), name='vape_kit_category'),
 ]
 
 

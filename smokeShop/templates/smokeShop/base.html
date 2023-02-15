@@ -28,7 +28,7 @@
   </div><br>
 
   <div class="logo-section">
-    <a href=""><img src="{% static 'smokeShop/media/logo2.png' %}" alt="logo"></a>
+    <a href="{% url 'home' %}"><img src="{% static 'smokeShop/media/logo2.png' %}" alt="logo"></a>
   </div>
   <section class="signIn-user-search">
     <div style="width: 168px; text-decoration:none; margin-left: 100px;"></div>
@@ -44,8 +44,8 @@
       <div class="loginPage">
         <ul>
           {% if user.is_authenticated %}
-          <li><a href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping"></i></a></li>
           <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+          <li><a href="{% url 'cart' %}"><i style="font-size: 30px" class="fa-solid fa-cart-shopping"></i></a></li>
           {% else %}
           <li><a href="{% url 'account_login' %}">Sign In</a></li>
           <li><p>|</p></li>
@@ -53,7 +53,7 @@
           {% endif %}
         </ul>
       </div>
-      <li><a href="{% url 'product' %}"><p style="color: white; font-size: 13px;">View all our Products</p></a></li>
+      <!-- <li><a href="{% url 'product' %}"><p style="color: white; font-size: 13px;">View all our Products</p></a></li> -->
 
     </section>
   </section>
@@ -67,10 +67,10 @@
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="#">Blog</a></li>
 
-        <li><a href="#">VAPE KITS</a></li>
-        <li><a href="#">VAPE PODS</a></li>
-        <li><a href="#">VAPE JUICE</a></li>
-        <li><a href="#">DISPOSABLES</a></li>
+        <li><a href="{% url 'vape_kit_category' %}">VAPE KITS</a></li>
+        <li><a href="{% url 'vape_pods_category' %}">VAPE PODS</a></li>
+        <li><a href="{% url 'vape_juice_category' %}">VAPE JUICE</a></li>
+        <li><a href="{% url 'disposable_vape_category' %}">DISPOSABLES</a></li>
       </ul>
       
     </div>
@@ -79,7 +79,7 @@
   
   {% block content %}
 
-  {% endblock %}
+  {% endblock content %}
 
   <!-- footer -->
   <footer class="homeFooter">

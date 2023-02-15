@@ -1,6 +1,13 @@
 from django.conf import settings
 from django.db import models
-from django.db.models import Sum, Avg
+from decimal import Decimal
+
+from payments import PurchasedItem
+from payments.models import BasePayment
+
+from django.db.models import Avg
+from django.urls import reverse
+
 
 
 
@@ -11,11 +18,15 @@ class Product(models.Model):
   alt = models.CharField(max_length=255, null=True, blank=True)
   rating = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True)
   user_review = models.TextField(null=True, blank=True)
+  category = models.CharField(max_length=255, null=True, blank=True)
   
  
 
   def __str__(self):
     return self.title
+
+  def get_product_category(self):
+    return self.category
   
   def get_rating(self):
     rating = Product.objects.filter(id=self.id).aggregate(Avg('rating'))
@@ -25,7 +36,7 @@ class Product(models.Model):
 
 
 class OrderItem(models.Model):
-  product = models.OneToOneField(Product, on_delete=models.SET_NULL, null=True)
+  product = models.OneToOneField(Product, on_delete=models.CASCADE)
   quantity = models.IntegerField(default=1)
   ordered = models.BooleanField(default=False)
   date_added = models.DateTimeField(auto_now_add=True)
@@ -53,7 +64,26 @@ class Order(models.Model):
     return sum([item.get_price_total() for item in self.order_item.all()])
 
   
+class Payment(BasePayment):
+  order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, blank=True)
 
+  def get_purchased_items(self):
+    items = []
+    for item in self.order.order_item.all():
+        purchased_item = PurchasedItem(
+        name=item.product.title,
+        sku=item.product.id,
+        quantity=item.quantity,
+        price=Decimal(item.product.price),
+        currency='USD',
+        description=item.product.title,
+      )
+    items.append(purchased_item)
+    return items
 
+  def get_success_url(self):
+    return reverse('payments:success')
 
+  def get_failure_url(self):
+    return reverse('payments:failure')
 

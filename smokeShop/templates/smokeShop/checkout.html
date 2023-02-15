@@ -1,25 +1,37 @@
-{% load static %}
+{% extends "smokeShop/base.html" %}
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Buy cool new product</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="{% static 'smokeShop/checkout_style.css' %}">
-    <script src="https://js.stripe.com/v3/"></script>
-  </head>
-  <body>
-    <section>
-      <div class="product">
-        {% comment %} <img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" /> {% endcomment %}
-        <div class="description">
-          <h3>{{ product.name }}</h3>
-          <h5>${{ product.get_display_price}}</h5>
-        </div>
+{% load crispy_forms_tags %}
+
+{% block title %} 
+  Checkout
+{% endblock %} 
+
+{% block content %} 
+    <form class="checkout-form" action="">
+      {% csrf_token %}
+      <div class="form-group checkout-form">
+        <label for="cardType">Card Type</label>
+        <select class="form-control" id="cardType">
+          <option>Visa</option>
+          <option>Master Card</option>
+          <option>American Express</option>
+        </select>
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" class="form-control" id="cardNumber" placeholder="Enter Card Number">
       </div>
-      <form action="/create-checkout-session" method="POST">
-        <button type="submit" id="checkout-button">Checkout</button>
-      </form>
-    </section>
-  </body>
-</html>
+      <div class="form-group">
+        <label for="cardHolderName">Card Holder Name</label>
+        <input type="text" class="form-control" id="cardHolderName" placeholder="Enter Card Holder Name">
+      </div>
+      <div class="form-group">
+        <label for="cardExpiryDate">Card Expiry Date</label>
+        <input type="text" class="form-control" id="cardExpiryDate" placeholder="Enter Card Expiry Date">
+      </div>
+      <div class="form-group">
+        <label for="cardCVV">Card CVV</label>
+        <input type="text" class="form-control" id="cardCVV" placeholder="Enter Card CVV">
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+{% endblock %}

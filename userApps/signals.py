@@ -15,13 +15,6 @@ def create_user_profile(sender, instance, created, **kwargs):
     Profile.objects.create(user=instance)
 
 
-#automatically creates a user profile when a user is created
-#Sends a signal when a user is saved.
-@receiver(post_save, sender=User)
-def create_profile(sender, instance, created, **kwargs):
-  if created:
-    Profile.objects.create(user=instance)
-
 #saves the user profile when a user is saved
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, created, **kwargs):

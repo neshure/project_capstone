@@ -1,5 +1,6 @@
 from django import forms
-from .models import Product
+from .models import Product, Payment
+
 
 
 
@@ -10,3 +11,9 @@ class UserRatingForm(forms.ModelForm):
   class Meta:
     model = Product
     fields = ['rating', 'user_review']
+
+
+class PaymentForm(forms.ModelForm):
+  class Meta:
+    model = Payment
+    fields = ['currency', 'description']

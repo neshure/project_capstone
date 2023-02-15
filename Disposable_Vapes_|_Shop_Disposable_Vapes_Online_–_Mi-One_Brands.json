@@ -1,4 +1,6 @@
-[
+{
+"category": "Disposable Vapes",
+"products":[
     {
         "title": "Elf Bar BC3500 Sampler Pack",
         "price": "$34.99",
@@ -287,4 +289,4 @@
         "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Tropical_Punch_600x.png?v=1652399712",
         "alt": "Best Tropical Punch Disposable Vape"
     }
-]
+]}

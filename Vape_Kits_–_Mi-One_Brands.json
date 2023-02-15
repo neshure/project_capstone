@@ -1,0 +1,220 @@
+{
+    "category": "Vape Kits",
+    "products":[
+    {
+        "title": "Carbon Fiber Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Carbon_Fiber_600x.png?v=1652978714",
+        "alt": "Carbon Fiber Mi-Pod PRO +"
+    },
+    {
+        "title": "Black Raw Mi-Pod PRO +",
+        "price": "$40",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Black_Raw_79411a8f-2dfb-4ec6-adfb-db9e734b5779_600x.png?v=1652979068",
+        "alt": "The Black Raw edition Mi-Pod PRO adds a natural grain to the award winning vape device, made for nic salts"
+    },
+    {
+        "title": "Sea Dragon Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Sea_Dragon_600x.png?v=1652810776",
+        "alt": "Showing off a fantasy theme, the Sea Dragon Mi-Pod PRO pairs perfectly with all nicotine salts"
+    },
+    {
+        "title": "Pearl Dragon Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Pearl_Dragon_600x.png?v=1652979131",
+        "alt": "Pearl Dragon Mi-Pod PRO +"
+    },
+    {
+        "title": "Purple Pebbles Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Purple_Pebble_600x.png?v=1652804531",
+        "alt": "Purple Pebbles Mi-Pod Pro Kit"
+    },
+    {
+        "title": "Red Raw Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Red_Raw_e2bd2bdd-a880-48fd-a471-f89bddc48156_600x.png?v=1652981921",
+        "alt": "Red Raw Mi-Pod Pro Kit"
+    },
+    {
+        "title": "Brown Raw Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Brown_Raw_600x.png?v=1652810800",
+        "alt": "The Brown Raw edition Mi-Pod PRO adds a natural grain to the award winning vape device, made for nic salts"
+    },
+    {
+        "title": "Blue Pebbles Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Blue_Pebble_600x.png?v=1652802130",
+        "alt": "Blue Pebbles Mi-Pod Pro Kit"
+    },
+    {
+        "title": "Dark Scales Mi-Pod 2.0 +",
+        "price": "$44.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Dark_Scales_A1_600x.png?v=1663796384",
+        "alt": "Dark Scales Mi-Pod 2.0 Vape Pod Kit"
+    },
+    {
+        "title": "Slate Hue Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/slate_hue_5a2b8091-c622-4684-9752-f835c60a8695_600x.png?v=1656516988",
+        "alt": "Slate Hue Mi-Pod PRO +"
+    },
+    {
+        "title": "Midnight Hue Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/midnight_hue_8484d1c0-5bbf-4df3-867d-a2d4b95ecdb9_600x.png?v=1656516963",
+        "alt": "Midnight Hue Mi-Pod PRO +"
+    },
+    {
+        "title": "Caliburn AK2 Pod Kit",
+        "price": "$29.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Caliburn_AK2_Black_600x.png?v=1642176713",
+        "alt": "Caliburn AK2 Pod Kit"
+    },
+    {
+        "title": "Vino Hue Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/vino_hue_96f66eca-2f27-432e-9b15-8ee9e8b7a682_600x.png?v=1656517001",
+        "alt": "Vino Hue Mi-Pod PRO +"
+    },
+    {
+        "title": "Fuchsia Hue Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/fuchsia_hue_fe47e393-34c9-4af6-a90d-6de3670b0f0f_600x.png?v=1656516951",
+        "alt": "Fuchsia Hue Mi-Pod PRO +"
+    },
+    {
+        "title": "Royal Hue Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/royal_hue_02280b9f-1607-4f57-9fca-593956b2fa9f_600x.png?v=1656516976",
+        "alt": "Royal Hue Mi-Pod PRO +"
+    },
+    {
+        "title": "Yellowjacket Mi-Pod PRO +",
+        "price": "$40",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/YellowJacket_Angled_600x.png?v=1661358225",
+        "alt": "Yellow Mi-Pod Pro + Kit"
+    },
+    {
+        "title": "Voopoo Vinci Pod Kit",
+        "price": "$24.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/aurora_neon_600x.png?v=1655501744",
+        "alt": "Voopoo Vinci Pod Kit"
+    },
+    {
+        "title": "Sand Scales Mi-Pod 2.0 +",
+        "price": "$44.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Sand_Scales_A1_600x.png?v=1663796176",
+        "alt": "Sand Scales Mi-Pod 2.0 Vape Pod Kit"
+    },
+    {
+        "title": "Sky Scales Mi-Pod 2.0 +",
+        "price": "$44.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Sky_Scales_A1_600x.png?v=1663796651",
+        "alt": "Sky Scales Mi-Pod 2.0 Vape Pod Kit"
+    },
+    {
+        "title": "Silver Scales Mi-Pod 2.0 +",
+        "price": "$44.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Silver_Scales_A1_600x.png?v=1663797008",
+        "alt": "Silver Scales Mi-Pod 2.0 + Refillable Vape Kit"
+    },
+    {
+        "title": "Earth Scales Mi-Pod 2.0 +",
+        "price": "$44.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Earth_Scales_A1_600x.png?v=1663796820",
+        "alt": "Earth Scales Mi-Pod 2.0 + Kit"
+    },
+    {
+        "title": "White Scales Mi-Pod 2.0 +",
+        "price": "$44.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/White_Scales_A1_600x.png?v=1663796045",
+        "alt": "White Scales Mi-Pod 2.0 Vape Pod Kit"
+    },
+    {
+        "title": "Pink Voyage Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Mipod-Pro-Plus_Pink-Voyage_B2C_600x600_13b95268-e309-49d9-8041-8888aeb601f6_600x.png?v=1675442214",
+        "alt": "Pink Voyage Mi-Pod PRO +"
+    },
+    {
+        "title": "Oxbar RRD Kit - Black",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Black_2_600x.png?v=1667412808",
+        "alt": "Black Oxbar RRD Vape"
+    },
+    {
+        "title": "Blue Voyage Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Mipod-Pro-Plus_Blue-Voyage_B2C_600x600_6909d59e-94a4-40f3-a80f-042ba35a74b5_600x.png?v=1675442191",
+        "alt": "Blue Voyage Mi-Pod PRO +"
+    },
+    {
+        "title": "Caliburn A3 Kit",
+        "price": "$29.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/caliburn-a3-blue_600x.png?v=1673999228",
+        "alt": "Caliburn A3 Kit"
+    },
+    {
+        "title": "Oxbar RRD Kit - Cherry Pink",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Chery_Pink_600x.png?v=1667414201",
+        "alt": "Hot Pink Oxbar RRD Vape"
+    },
+    {
+        "title": "Oxbar RRD Kit - Sakura Gradient",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Sakura_Gradient_600x.png?v=1667414254",
+        "alt": "Sakura Gradient Oxbar RRD Vape"
+    },
+    {
+        "title": "Oxbar RRD Kit - Light Green",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Light_Green_600x.png?v=1667414219",
+        "alt": "Light Green Oxbar RRD Vape"
+    },
+    {
+        "title": "Silver Voyage Mi-Pod PRO +",
+        "price": "$39.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Mipod-Pro-Plus_Silver-Voyage_B2C_600x600_bfcd5964-9509-45aa-ab72-f46acffbf7cd_600x.png?v=1675442227",
+        "alt": "Silver Voyage Mi-Pod PRO +"
+    },
+    {
+        "title": "Oxbar RRD Kit - Purple",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Purple_1_600x.png?v=1667414246",
+        "alt": "Purple Oxbar RRD Vape"
+    },
+    {
+        "title": "Oxbar RRD Kit - Blue Gradient",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Blue_Gradient_600x.png?v=1667414192",
+        "alt": "Blue Gradient Oxbar RRD Vape"
+    },
+    {
+        "title": "Oxbar RRD Kit - Silver",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Silver_600x.png?v=1667414266",
+        "alt": "Silver Oxbar RRD Vape"
+    },
+    {
+        "title": "Oxbar RRD Kit - Peri Blue",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Peri_Blue_600x.png?v=1667414229",
+        "alt": "Peri Blue Oxbar RRD Vape"
+    },
+    {
+        "title": "Oxbar RRD Kit - Pink",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Barbie_Pink_600x.png?v=1667414237",
+        "alt": "Pink Oxbar RRD Vape"
+    },
+    {
+        "title": "Oxbar RRD Kit - Gold",
+        "price": "$14.99",
+        "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/Luxe_Gold_600x.png?v=1667414210",
+        "alt": "Gold Oxbar RRD Vape"
+    }
+]}

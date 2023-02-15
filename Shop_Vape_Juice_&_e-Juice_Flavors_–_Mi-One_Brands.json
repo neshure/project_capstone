@@ -1,4 +1,6 @@
-[
+{
+"category": "vape juice",
+"products": [
     {
         "title": "Lush Ice VaporLax Salt",
         "price": "$12.99",
@@ -287,4 +289,4 @@
         "image": "//cdn.shopify.com/s/files/1/0070/8286/8772/products/tropical-punch-50mg-salt_600x.png?v=1623099775",
         "alt": "Tropical Punch by VaporLax Salts is a tropical flavored vape juice, blended with nicotine salts"
     }
-]
+]}

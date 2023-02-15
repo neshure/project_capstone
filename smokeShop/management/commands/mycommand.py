@@ -12,10 +12,11 @@ class Command(BaseCommand):
     json_file = options['json_file']
     with open(json_file) as f:
       data = json.load(f)
-      for product in data:
+      category = data['category']
+      for product in data['products']:
         price = product['price'].replace('$', '')
         product['price'] = float(price)
-        items = Product(title=product['title'], price=product['price'], image=product['image'], alt=product['alt'])
+        items = Product(title=product['title'], price=product['price'], image=product['image'], alt=product['alt'], category=category)
         items.save()
     self.stdout.write(self.style.SUCCESS('Successfully scrapped data from website'))
 

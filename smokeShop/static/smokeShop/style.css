@@ -977,3 +977,12 @@ body{
 .user-review-form .rating-input{
   width: 20%;
 }
+
+/* style checkout page */
+
+.checkout-form{
+  padding: 10px 20px;
+  margin: 0 20px;
+  margin-bottom: 20px;
+  
+}
