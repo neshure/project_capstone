@@ -986,3 +986,136 @@ body{
   margin-bottom: 20px;
   
 }
+
+
+
+
+/* Style Age confirmation window  */
+
+.confirm{
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px;
+  box-sizing: border-box;
+
+  opacity: 0;
+  animation-name: confirm---open;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+/* .confirm--close{
+  opacity: 0;
+  animation-name: confirm---close;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+} */
+
+.confirm__window{
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  font-size: 14px;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+
+  opacity: 0;
+  transform: scale(0.8);
+  animation-name: confirm__window---open;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+
+}
+
+.confirm__titlebar,
+.confirm__content,
+.confirm__buttons{
+  padding: 1.25em;
+}
+
+.confirm__titlebar{
+  height: 30px;
+  background: #070707;
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* .confirm__title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'poppins' , sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+} */
+
+.confirm__content{
+  font-family: 'poppins' , sans-serif;
+  line-height: 2em;
+}
+
+.confirm__button{
+  background: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.confirm__button{
+  background: #ffffff;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  padding: 0.5em 1em;
+  font-size: 1.1em;
+  font-family: 'poppins' , sans-serif;
+  margin-left: 0.6em;
+  cursor: pointer;
+  outline: none;
+}
+
+.confirm__button--fill{
+  background: rgb(233, 49, 49);
+  color: white;
+}
+
+.confirm__button:focus{
+  box-shadow: 0 0 0 3px #eeeeee;
+}
+
+@keyframes confirm---open{
+  from{opacity: 0}
+  to{opacity: 1}
+}
+
+@keyframes confirm---close{
+  from{opacity: 1}
+  to{opacity: 0}
+}
+
+@keyframes confirm__window---open{
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}

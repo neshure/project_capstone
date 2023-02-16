@@ -7,7 +7,6 @@ from django.contrib.auth import authenticate, login as user_login, logout as use
 
 
 
-
 def login(request):
     if request.method == 'GET':
         form = UserLoginForm()

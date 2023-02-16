@@ -13,7 +13,8 @@ from .views import (
 
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.home_age_verify, name='home_age_verify'),
+    path('home/', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('add_to_cart/<pk>', views.add_to_cart, name='add_to_cart'),
     path('cart/', views.cart, name='cart'),

@@ -20,7 +20,8 @@ from payments import get_payment_model
 
 
 
-
+def home_age_verify(request):
+  return render(request, 'smokeShop/home_age_verify.html')
 
 def home(request):
   return render(request, 'smokeShop/home.html')

@@ -20,20 +20,9 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-            <div class="item active">
-                <img src="https://www.elementvape.com/media/slideshow/cache/1380x569/homepage_banners/Voopoo_Drag_4_Front_Page_Banner.jpg" alt="Los Angeles" style="width:100%;">
-            </div>
-
-            <div class="item">
-                <img src="https://cdn.shopify.com/s/files/1/0070/8286/8772/files/Funky-Republic_Desktop-Banner_1920x800_09162bca-68a6-40d7-ae63-f959d7c7a9a3_1800x.jpg?v=1675726194" alt="Chicago" style="width:100%;">
-            </div>
-            
-            <div class="item">
-                <img src="https://www.elementvape.com/media/slideshow/cache/1380x569/homepage_banners/Geek_Vape_E100_Front_Page.jpg" alt="New york" style="width:100%;">
-            </div>
-            <div class="item">
-                <img src="https://cdn.shopify.com/s/files/1/0070/8286/8772/files/New_And_Improved_Draco_Desktop_1800x.jpg?v=1664558884" alt="New york" style="width:100%;">
-            </div>
+              <div class="item active">
+                  <img src="https://www.elementvape.com/media/slideshow/cache/1380x569/homepage_banners/Voopoo_Drag_4_Front_Page_Banner.jpg" alt="Los Angeles" style="width:100%;">
+              </div>
             </div>
 
             <!-- Left and right controls -->
@@ -94,5 +83,64 @@
         </div>
 
     </div>
+    <script defer>
+       
+        const Confirm = {
+        open(options) {
+            options = Object.assign({}, {
+            }, options);
+
+            const html = `
+            <div class="confirm">
+            <div class="confirm__window">
+                <div class="confirm__titlebar">
+                <span class="confirm__title">${options.title}</span>
+                </div>
+                <div class="confirm__content">${options.message}<div class="confirm__button">
+                    <button class="confirm__button confirm__button--ok confirm__button--fill">${options.okText}</button>
+                    <button class="confirm__button confirm__button--cancel">${options.cancelText}</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            `;
+            const template = document.createElement('template');
+            template.innerHTML = html;
+            
+            
+            const confirmElement = template.content.querySelector('.confirm');
+            const okButton = template.content.querySelector('.confirm__button--ok');
+            const cancelButton = template.content.querySelector('.confirm__button--cancel');
+
+
+            okButton.addEventListener('click', () => {
+            options.onOk();
+            this._close(confirmElement);
+            });
+
+            cancelButton.addEventListener('click', () => {
+            options.onCancel();
+            this._close(confirmElement);
+            });
+
+            
+            document.body.appendChild(template.content);
+
+        },
+
+        };
+        Confirm.open({
+            title: 'AGE VERIFICATION',
+            message: 'These are age-restricted products and intended for adults of legal smoking age only. By entering our website, you affirm that you are of legal smoking age in your jurisdiction.',
+            okText: 'Yes, I am 21+ years old',
+            cancelText: 'Cancel',
+            onOk: function() {
+            window.location.href = 'http://127.0.0.1:8000/home/'
+            },
+            onCancel: function() {
+            window.location.href = 'https://www.google.com/'
+            }
+        })
+    </script>
 
 {% endblock %}  
