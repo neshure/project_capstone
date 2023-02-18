@@ -44,8 +44,9 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'userApps',
-     "payments",
-     'openAI',
+    'paypal.standard.ipn',
+    'django_countries',
+    'openAI',
 ]
 
 MIDDLEWARE = [
@@ -160,19 +161,10 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-#Stripe API keys
-STRIPE_PUBLIC_KEY = ""
-STRIPE_SECRET_KEY = ""
-STRIPE_WEBHOOK_SECRET = ""
 
 #Email Configuration
 SITE_ID=1
 
-#PAYMENT CONFIGURATION
-PAYMENT_VARIANTS = {
-    'default': ('payments.dummy.DummyProvider', {})
-}
-
-PAYMENT_MODEL = 'mypaymentapp.models.Payment'
-PAYMENT_HOST = 'localhost:8000'
-PAYMENT_USES_SSL = False
+#django-paypal settings
+PAYPAL_TEST = True
+PAYPAL_RECEIVER_EMAIL = 'sb-gfkyz25084580@business.example.com'

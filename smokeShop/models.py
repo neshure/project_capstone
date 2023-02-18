@@ -2,11 +2,11 @@ from django.conf import settings
 from django.db import models
 from decimal import Decimal
 
-from payments import PurchasedItem
-from payments.models import BasePayment
 
 from django.db.models import Avg
 from django.urls import reverse
+
+import uuid
 
 
 
@@ -51,10 +51,26 @@ class OrderItem(models.Model):
 
 class Order(models.Model):
   user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+  first_name = models.CharField(max_length=255, null=True, blank=True)
+  last_name = models.CharField(max_length=255, null=True, blank=True)
+  email = models.EmailField(null=True, blank=True)
+  address = models.CharField(max_length=255, null=True, blank=True)
+  apartment_address = models.CharField(max_length=255, null=True, blank=True)
+  city = models.CharField(max_length=255, null=True, blank=True)
+  state = models.CharField(max_length=255, null=True, blank=True)
+  zip = models.CharField(max_length=255, null=True, blank=True)
+  country = models.CharField(max_length=255, null=True, blank=True)
+  billing_address = models.CharField(max_length=255, null=True, blank=True)
+  billing_apartment_address = models.CharField(max_length=255, null=True, blank=True)
+  billing_city = models.CharField(max_length=255, null=True, blank=True)
+  billing_state = models.CharField(max_length=255, null=True, blank=True)
+  billing_zip = models.CharField(max_length=255, null=True, blank=True)
+  billing_country = models.CharField(max_length=255, null=True, blank=True)
   order_item = models.ManyToManyField(OrderItem)
   start_date = models.DateTimeField(auto_now_add=True)
-  ordered_date = models.DateTimeField(null=True, blank=True)
+  ordered_date = models.DateTimeField(auto_now=True)
   ordered = models.BooleanField(default=False)
+
   
 
   def get_cart_items(self):
@@ -62,28 +78,32 @@ class Order(models.Model):
 
   def get_cart_total(self):
     return sum([item.get_price_total() for item in self.order_item.all()])
+  
+  
+  
+
 
   
-class Payment(BasePayment):
-  order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, blank=True)
 
-  def get_purchased_items(self):
-    items = []
-    for item in self.order.order_item.all():
-        purchased_item = PurchasedItem(
-        name=item.product.title,
-        sku=item.product.id,
-        quantity=item.quantity,
-        price=Decimal(item.product.price),
-        currency='USD',
-        description=item.product.title,
-      )
-    items.append(purchased_item)
-    return items
 
-  def get_success_url(self):
-    return reverse('payments:success')
+#Payment Model
+class Payment(models.Model):
+  PAYMENT_CHOICES = (
+    ('S', 'Stripe'),
+    ('P', 'PayPal')
+  )
+  STATUS_CHOICES = (
+    ('P', 'Pending'),
+    ('D', 'Delivered'),
+    ('C', 'Cancelled')
+  )
+  amount = models.DecimalField(max_digits=6, decimal_places=2, default=Decimal('0.00'))
+  payment_method = models.CharField(max_length=1, choices=PAYMENT_CHOICES, default='P')
+  transaction_id = models.UUIDField(default=uuid.uuid4, editable=False)
+  status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='P')
+  order = models.ForeignKey('Order', on_delete=models.CASCADE, related_name='payments', null=True, blank=True)
+  created_at = models.DateTimeField(auto_now_add=True)
 
-  def get_failure_url(self):
-    return reverse('payments:failure')
+  def __str__(self):
+    return f'Payment #{self.id} ({self.payment_method}, {self.amount}) for order #{self.order.id}'
 

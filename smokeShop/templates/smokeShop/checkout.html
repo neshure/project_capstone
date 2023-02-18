@@ -7,31 +7,23 @@
 {% endblock %} 
 
 {% block content %} 
-    <form class="checkout-form" action="">
-      {% csrf_token %}
-      <div class="form-group checkout-form">
-        <label for="cardType">Card Type</label>
-        <select class="form-control" id="cardType">
-          <option>Visa</option>
-          <option>Master Card</option>
-          <option>American Express</option>
-        </select>
-      <div class="form-group">
-        <label for="cardNumber">Card Number</label>
-        <input type="text" class="form-control" id="cardNumber" placeholder="Enter Card Number">
-      </div>
-      <div class="form-group">
-        <label for="cardHolderName">Card Holder Name</label>
-        <input type="text" class="form-control" id="cardHolderName" placeholder="Enter Card Holder Name">
-      </div>
-      <div class="form-group">
-        <label for="cardExpiryDate">Card Expiry Date</label>
-        <input type="text" class="form-control" id="cardExpiryDate" placeholder="Enter Card Expiry Date">
-      </div>
-      <div class="form-group">
-        <label for="cardCVV">Card CVV</label>
-        <input type="text" class="form-control" id="cardCVV" placeholder="Enter Card CVV">
-      </div>
-      <button type="submit" class="btn btn-dark">Submit</button>
-    </form>
+    <main >
+        <div class="container">
+            <h2 style="font-weight:900;font-size: 30px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif" class="my-5 h2 container">Checkout</h2>
+            <div class="row">
+                <div class="col-md-8 mb-4">
+                <div class="card">
+                    <form method="POST" class="card-body">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <hr class="mb-4 mt-5">
+                        <button class="btn btn-success btn-lg btn-block" type="submit">Continue to checkout</button>   
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div> 
+    </main>
 {% endblock %}

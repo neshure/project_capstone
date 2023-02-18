@@ -4,6 +4,7 @@ from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, UserLogi
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.contrib.auth import authenticate, login as user_login, logout as user_logout
+from django.views.decorators.csrf import csrf_protect
 
 
 
@@ -23,6 +24,7 @@ def login(request):
                 else:
                     return redirect('home')
     return render(request, 'userApps/login.html', {'form': form})
+
 
 
 def logout(request):

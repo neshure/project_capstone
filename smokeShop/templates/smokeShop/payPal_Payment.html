@@ -1,0 +1,112 @@
+{% extends 'smokeShop/base.html' %} 
+{% load static %}
+
+
+{% block title %} 
+  PayPal Payment
+{% endblock %} 
+
+{% block content %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-success" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Order Summary</h1>
+        <hr>
+        <div class="row">
+        <div class="col-md-6">
+            <h3>Order Details</h3>
+            <table class="table table-striped">
+              
+            <tr>
+                <th>Order ID</th>
+                <td>{{ order.id }}</td>
+            </tr>
+            <tr>
+                <th>Order Date</th>
+                <td>{{ order.ordered_date}}</td>
+            </tr>
+            <tr>
+                <th>Order Total</th>
+                <td>${{ order.get_cart_total }}</td>
+            </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <h3>Shipping Details</h3>
+            <!-- This table is non-editable -->
+            <table class="table table-striped"> 
+            <tr>
+                <th>First Name</th>
+                <td>{{ order.first_name }}</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>{{ order.last_name }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ order.email }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ order.billing_address }}</td>
+            </tr>
+            <tr>
+                <th>Postal Code</th>
+                <td>{{ order.billing_zip }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ order.billing_city }}</td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td>{{ order.billing_state }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ order.billing_country }}</td>
+            </tr>
+            </table>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Order Items</h3>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in order.order_item.all %}
+                  <tr>
+                    <td>{{ item.product.title }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.product.price }}</td>
+                    <td>{{ item.get_price_total }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="mb-4 mt-5 container">
+  {{form.render}}
+</div>
+{% endblock %}

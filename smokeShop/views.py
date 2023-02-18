@@ -1,22 +1,22 @@
-import stripe
 from django.conf import settings
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
+
 from . models import Product, OrderItem, Order, Payment
-from payments import get_payment_model, RedirectNeeded
 from django.views.generic import ListView, DetailView
 from django.contrib import messages
 from django.views import View
 from django.core.paginator import Paginator
-from django.http import HttpResponse, JsonResponse
+
+
 from userApps.models import Profile
 from . extras import generate_order_id
-from django.db.models import Avg
-from .forms import UserRatingForm
-from decimal import Decimal
 
-from payments import get_payment_model
+
+from paypal.standard.forms import PayPalPaymentsForm
+import uuid
+from .forms import CheckoutForm
 
 
 
@@ -88,7 +88,102 @@ def remove_from_cart(request, **kwargs):
 
 
 def checkout(request):
-  return render(request, 'smokeShop/checkout.html')
+  form = CheckoutForm()
+  if request.method == 'POST':
+      form = CheckoutForm(request.POST)
+      if form.is_valid():
+          first_name = form.cleaned_data.get('first_name')
+          last_name = form.cleaned_data.get('last_name')
+          street_address = form.cleaned_data.get('street_address')
+          apartment_address = form.cleaned_data.get('apartment_address')
+          country = form.cleaned_data.get('country')
+          state = form.cleaned_data.get('state')
+          city = form.cleaned_data.get('city')
+          zip = form.cleaned_data.get('zip')
+          same_billing_address = form.cleaned_data.get('same_billing_address')
+          save_info = form.cleaned_data.get('save_info')
+          if same_billing_address:
+              billing_address = street_address
+              billing_apartment_address = apartment_address
+              billing_country = country
+              billing_state = state
+              billing_city = city
+              billing_zip = zip
+          else:
+              billing_address = form.cleaned_data.get('billing_address')
+              billing_apartment_address = form.cleaned_data.get('billing_apartment_address')
+              billing_country = form.cleaned_data.get('billing_country')
+              billing_state = form.cleaned_data.get('billing_state')
+              billing_city = form.cleaned_data.get('billing_city')
+              billing_zip = form.cleaned_data.get('billing_zip')
+          order = Order.objects.filter(user=request.user, ordered=False)
+          if order.exists():
+              order = order[0]
+              order.first_name = first_name
+              order.last_name = last_name
+              order.email = request.user.email
+              order.address = street_address
+              order.apartment_address = apartment_address
+              order.city = city
+              order.state = state
+              order.country = country
+              order.zip = zip
+              order.billing_address = billing_address
+              order.billing_apartment_address = billing_apartment_address
+              order.billing_country = billing_country
+              order.billing_state = billing_state
+              order.billing_city = billing_city
+              order.billing_zip = billing_zip
+              order.save()
+              return redirect(reverse('payment', kwargs={'pk': order.id}))
+          else:
+              messages.warning(request, "You do not have an active order")
+              return redirect(reverse('cart'))
+  return render(request, 'smokeShop/checkout.html', {'form': form})
+
+  
+
+
+
+#PAYPAL PAYMENT
+def payment(request, pk):
+  order = Order.objects.get(id=pk)
+  host = request.get_host()
+  invoice_number = str(uuid.uuid4())
+  paypal_dict = {
+      'business': settings.PAYPAL_RECEIVER_EMAIL,
+      'amount': order.get_cart_total(),
+      'item_name': f'order number {invoice_number}',
+      'invoice': invoice_number,
+      'currency_code': 'USD',
+      'notify_url': f"http://{host}{reverse('paypal-ipn')}",
+      'return_url': f"http://{host}{reverse('paypal_return')}",
+      'cancel_return': f"http://{host}{reverse('paypal_cancel')}",
+  }
+
+
+  form = PayPalPaymentsForm(initial=paypal_dict)
+  context = {'form': form,
+             'order': order}
+  
+  return render(request, 'smokeShop/payPal_Payment.html', context)
+
+
+
+
+#paypal return and cancel
+def paypal_return(request):
+  return redirect('order_confirmation')
+
+def paypal_cancel(request):
+  messages.warning(request, 'Payment was cancelled')
+  return redirect('home')
+
+def order_confirmation(request):
+  messages.success(request, 'Payment was successful')
+  return render(request, 'smokeShop/order_confirmation.html')
+
+
 
 
 class ProductView(ListView):
@@ -154,33 +249,5 @@ def user_rating(request):
   return render(request, 'smokeShop/user_rating.html')
 
 
-
-
-# payment gateway
-def payment_details(request, payment_id):
-  payment = get_object_or_404(Payment, id=payment_id)
-  try:
-    form = payment.get_form(data=request.POST or None)
-  except RedirectNeeded as redirect_to:
-    return redirect(redirect_to)
-  return render(request, 'smokeShop/payment_details.html', {'payment': payment, 'form': form})
-
-
-# payment process
-def payment(request):
-  order_id = request.session.get('order_id')
-  order = get_object_or_404(Order, id=order_id)
-
-  payment = get_payment_model().objects.create(
-    variant='default',
-    description=order_id,
-    total=order.get_total(),
-    currency='USD',
-    delivery=order.get_total(),
-    billing_first_name=order.user.first_name,
-    billing_last_name=order.user.last_name, 
-    customer_ip_address='127.0.0.1',)
-  request.session['payment_id'] = payment.id
-  return render(request, 'smokeShop/payment.html', {'payment': payment})
 
 
