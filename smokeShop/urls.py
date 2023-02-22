@@ -31,6 +31,7 @@ urlpatterns = [
     path('paypal_return/', views.paypal_return, name='paypal_return'),
     path('paypal_cancel/', views.paypal_cancel, name='paypal_cancel'),
     path('order_confirmation/', views.order_confirmation, name='order_confirmation'),
+    path('blog/', views.blog, name='blog'),
 ]
 
 

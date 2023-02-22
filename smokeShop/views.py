@@ -251,3 +251,8 @@ def user_rating(request):
 
 
 
+
+
+
+def blog(request):
+  return render(request, 'smokeShop/blog.html')

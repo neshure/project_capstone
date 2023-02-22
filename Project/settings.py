@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'userApps',
     'paypal.standard.ipn',
     'django_countries',
-    'openAI',
 ]
 
 MIDDLEWARE = [
