@@ -271,7 +271,6 @@ class SearchResultsView(ListView):
   def get_queryset(self):
     query = self.request.GET.get('search')
     query = urllib.parse.unquote_plus(query) # takes the + signs and converts them to spaces
-    print(query)
     object_list = Product.objects.filter(
         Q(title__icontains=query) 
     )
