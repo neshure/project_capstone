@@ -47,6 +47,10 @@
           <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
           <li><a href="{% url 'cart' %}"><i style="font-size: 30px" class="fa-solid fa-cart-shopping"></i></a></li>
           {% else %}
+          <form action="{% url 'search_results' %}" method="GET">
+            {% csrf_token %}
+            <input type="search" name="search" placeholder="Search...">
+          </form>
           <li><a href="{% url 'account_login' %}">Sign In</a></li>
           <li><p>|</p></li>
           <li><a href="{% url 'account_signup' %}">Sign Up</a></li>

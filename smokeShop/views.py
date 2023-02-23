@@ -18,6 +18,14 @@ from paypal.standard.forms import PayPalPaymentsForm
 import uuid
 from .forms import CheckoutForm
 
+from django.db.models import Q
+
+import urllib.parse
+
+
+
+
+
 
 
 def home_age_verify(request):
@@ -251,8 +259,21 @@ def user_rating(request):
 
 
 
-
-
-
 def blog(request):
   return render(request, 'smokeShop/blog.html')
+
+
+class SearchResultsView(ListView):
+  model = Product
+  template_name = 'smokeShop/product.html'
+  context_object_name = 'products' #Tells ListView what variable to loop over in the template
+
+  def get_queryset(self):
+    query = self.request.GET.get('search')
+    query = urllib.parse.unquote_plus(query) # takes the + signs and converts them to spaces
+    print(query)
+    object_list = Product.objects.filter(
+        Q(title__icontains=query) 
+    )
+    return object_list
+  

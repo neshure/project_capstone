@@ -13,6 +13,11 @@
         <div class="card-header">
           <a v-bind:href="'https://www.reddit.com'+post.data.permalink">
             <h2>[[ post.data.title ]]</h2>
+            <small>
+              <span class="badge badge-pill badge-primary">Author: [[ post.data.author ]]</span>
+              <span class="badge badge-pill badge-primary">Number of ups: [[ post.data.ups ]]</span>
+              <span class="badge badge-pill badge-primary"> Number of comments: [[ post.data.num_comments ]]</span>
+            </small>
           </a>
         </div>
         <div class="card-body"><img v-bind:src="post.data.url" alt=""></div>
